@@ -33,10 +33,11 @@ create table products(
 
 create table orderdetails(
 	orderNumber int(11) not null,
-	foreign key (orderNumber) references orders(orderNumber) on update cascade,
 	productCode varchar(15) not null,
-	foreign key (productCode) references products(productCode) on update cascade,
 	quanlityOrdered int(11) not null,
 	priceEach double not null,
-	orderLineNumber smallint(6) not null
+	orderLineNumber smallint(6) not null,
+	primary key (orderNumber, productCode),
+	foreign key (orderNumber) references orders(orderNumber) on update cascade,
+	foreign key (productCode) references products(productCode) on update cascade
 );
