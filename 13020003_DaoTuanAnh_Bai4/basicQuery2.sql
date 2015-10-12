@@ -1,3 +1,5 @@
+USE classicmodels;
+
 /**
  *
  * In ra danh sach khach hang o Nantes hoac Lyon

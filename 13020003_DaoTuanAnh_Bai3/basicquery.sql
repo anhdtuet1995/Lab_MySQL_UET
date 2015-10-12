@@ -1,3 +1,5 @@
+USE classicmodels;
+
 /*
 * In ra danh sach nhan vien co truong reportsTo chua xac dinh
 */
