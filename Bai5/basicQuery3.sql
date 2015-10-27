@@ -10,6 +10,6 @@ ALTER TABLE products ADD CONSTRAINT products_ibfk_1 FOREIGN KEY (productLine) RE
 
 UPDATE productlines SET productLine = REPLACE(productLine, 'Cars', 'Automobiles');
 
-SELECT orderNumber FROM orders ORDER BY DATEDIFF(requiredDate, shippedDate) DESC LIMIT 5;
+SELECT orderNumber FROM orders WHERE shippedDate is NOT NULL ORDER BY DATEDIFF(shippedDate, requiredDate) LIMIT 5;
 
 SELECT orderNumber FROM orders WHERE EXTRACT(YEAR FROM orderDate) = 2005 AND EXTRACT(MONTH FROM orderDate) = 5 AND shippedDate is NULL;
