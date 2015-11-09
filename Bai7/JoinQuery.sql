@@ -15,7 +15,9 @@ In ra ten khach hang va cac san pham
 */	
 
 SELECT 
-	c.customerName
+	c.customerName,
+	distinct(p.productLine)
 		FROM customers c
 			INNER JOIN orders o ON c.customerNumber = o.customerNumber
-			INNER JOIN orderdetails od ON o.orderNumber = od.orderNumber;
+			INNER JOIN orderdetails od ON o.orderNumber = od.orderNumber
+			INNER JOIN products p ON p.productCode = od.productCode;
