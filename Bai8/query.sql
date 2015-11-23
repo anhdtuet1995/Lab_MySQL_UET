@@ -26,7 +26,7 @@ SELECT *,
   (SELECT SUM(quantityOrdered * priceEach) 
     FROM orderdetails 
     WHERE orderNumber = o.orderNumber
-  ) 
+  ) AS total
 FROM orders AS o;
 
 /*nhu cau tren dung phep noi*/
